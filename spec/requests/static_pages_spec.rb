@@ -4,9 +4,9 @@ describe "Static pages" do
 
   	describe "Log in" do
 
-    		it "should have the content 'Registro'" do
+    		it "should have the content 'Login'" do
       		visit '/static_pages/login'
-      		expect(page).to have_content('Registro')
+      		expect(page).to have_content('Login')
     		end
   	end
 
