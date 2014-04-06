@@ -1,0 +1,15 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "EMPLEATE", '#', id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Inicio", :controller=>"static_pages", :action=>"home" %></li>
+          <li><%= link_to "Ayuda",    '#' %></li>
+          <li><%= link_to "Registro",:controller=>"users", :action=>"new" %></li>
+	</ul>
+      </nav>
+    </div>
+  </div>
+</header>
+

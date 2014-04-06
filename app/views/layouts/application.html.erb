@@ -7,11 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="menu">
-		<%= link_to "Inicio", :controller=>"static_pages", :action=>"home" %>
-		<%= link_to "Registro",:controller=>"users", :action=>"new" %>
-	</div>
-<%= yield %>
-
+	<%= render 'layouts/header' %>
+    	<div class="container">
+      	<%= yield %>
+      	<%= render 'layouts/footer' %>
+    	</div>
 </body>
 </html>
