@@ -1,9 +1,9 @@
 Empleate::Application.routes.draw do
+	resources :users
 	root  'static_pages#home'  #pagina principal del proyecto  
   	match '/registro',  to: 'users#new',            via: 'get'
-	get "static_pages/home"
 	get "static_pages/login"
-  	get "users/new"
+       	get "users/new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
