@@ -4,6 +4,7 @@ Empleate::Application.routes.draw do
   	match '/registro',  to: 'users#new',            via: 'get'
 	get "static_pages/login"
        	get "users/new"
+	get "static_pages/about"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
