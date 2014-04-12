@@ -4,16 +4,19 @@ describe "User pages" do
 
   subject { page }
 
-  	describe "Pagina Registro" do
-    		before { visit signup_path }
+	
+	describe "Registro" do
 
-    			it { should have_content('Registro') }
-    			it { should have_title(full_title('Registro')) }
-  	end
+                it "should have the content 'REGISTRO'" do
+                visit '/users/new'
+                expect(page).to have_content('REGISTRO')
+                end
+        end
+
 
 	describe "profile page" do
-  		# Replace with code to make a user variable
-  		before { visit user_path(user) }
+  		let(:user) { FactoryGirl.create(:user) } #para usar el fichero spec/factory.rb en el test	
+		before { visit user_path(user) }
 
   			it { should have_content(user.name) }
   			it { should have_title(user.name) }
@@ -21,3 +24,5 @@ describe "User pages" do
 
 
 end
+
+
