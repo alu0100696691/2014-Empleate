@@ -1,0 +1,59 @@
+<h1>Contacto</h1>
+
+<center><%= image_tag "empleate.png", :alt => "logo empleate", :title => "empleate"%></center>
+
+<h2>Póngase en contacto con nosotros</h2>
+
+<p>
+
+Para cualquier duda o sugerencia no dude en ponerse en contacto con nosotros. Nuestro equipo le responderá con la mayor brevedad posible.
+
+</p>
+
+<h2>Formulario</h2>
+
+<FORM method=post action="cgi-bin/script.pl">
+Registro de un usuario
+<TABLE BORDER=0>
+<TR>
+	<TD>Apellido</TD>
+	<TD>
+	<INPUT type=text name="apellido">
+	</TD>
+</TR>
+
+<TR>
+	<TD>Nombre</TD>
+	<TD>
+	<INPUT type=text name="nombre">
+	</TD>
+</TR>
+
+<TR>
+	<TD>¿Por qué se pone en contacto con nosotros?</TD>
+	<TD>
+	<SELECT name="ocupación">
+		<OPTION VALUE="profesor">Incidencia</OPTION>
+		<OPTION VALUE="estudiante">Consultas</OPTION>
+		<OPTION VALUE="ingeniero">Sugerencias</OPTION>
+		<OPTION VALUE="otro">Otro</OPTION>
+	</SELECT>
+	</TD>
+</TR>
+<TR>
+	<TD>Mensaje</TD>
+	<TD>
+	<TEXTAREA rows="3" name="comentarios">
+	Escriba aquí su mensaje</TEXTAREA>
+	</TD>
+</TR>
+
+<TR>
+	<TD COLSPAN=2>
+	<INPUT type="submit" value="Enviar">
+	</TD>
+</TR>
+</TABLE>
+</FORM>
+
+
