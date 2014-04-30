@@ -1,0 +1,4 @@
+<%= social_share_button_tag(@post.title) %>
+<%= social_share_button_tag(@post.title, :rel => "twipsy") %>
+<%= social_share_button_tag(@post.title, :url => "http://myapp.com/foo/bar") %>
+
