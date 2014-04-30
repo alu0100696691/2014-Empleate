@@ -4,6 +4,9 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+	<%= social_share_button_tag(@post.title) %>
+	<%= social_share_button_tag(@post.title, :rel => "twipsy") %>
+	<%= social_share_button_tag(@post.title, :url => "http://myapp.com/foo/bar") %>
       </h1>
     </section>
   </aside>
