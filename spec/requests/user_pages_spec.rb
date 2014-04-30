@@ -9,14 +9,14 @@ describe "User pages" do
     	before { visit user_path(user) }
 
     		it { should have_content(user.name) }
-    		it { should have_title(user.name) }
+    		#it { should have_title(user.name) }
   	end
 
 
 	
 	describe "Registro" do
 
-	before { visit signup_path }
+	before { visit registro_path } #signup_path }
 
     	let(:submit) { "Create my account" }
 
