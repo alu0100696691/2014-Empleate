@@ -20,6 +20,11 @@ describe "Authentication" do
 
      		# it { should have_title('Sign in') }
      		 it { should have_selector('div.alert.alert-error') }
+
+	describe "after visiting another page" do
+        	before { click_link "Home" }
+       		it { should_not have_selector('div.alert.alert-error') }
+      		end
     	end
   	end
 
@@ -28,7 +33,10 @@ describe "Authentication" do
       		before do
       		  fill_in "Email",    with: user.email.upcase
         	  fill_in "Password", with: user.password
-        	  click_button "Sign in"
+         describe "after visiting another page" do
+        before { click_link "Home" }
+        it { should_not have_selector('div.alert.alert-error') }
+      end	  click_button "Sign in"
       		end
 
      		 it { should have_title(user.name) }
