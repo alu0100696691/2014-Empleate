@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.0.0p247
+  - 2.0.0
 env:
   - RAILS_VERSION='->4.0.2'
   - DB=sqlite
