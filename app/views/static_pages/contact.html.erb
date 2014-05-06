@@ -1,59 +1,37 @@
-<h1>Contacto</h1>
+<div class="container">
+		<div class="row">			
+      			<div class="header col-xs-12 col-sm-12 col-md-12 "> 	
+				<h1>Contacto</h1>
 
-<center><%= image_tag "empleate.png", :alt => "logo empleate", :title => "empleate"%></center>
+				<center><%= image_tag "empleate.png", :alt => "logo empleate", :title => "empleate"%></center>
 
-<h2>Póngase en contacto con nosotros</h2>
+				<h2>Póngase en contacto con nosotros</h2>
 
-<p>
+				<p>
 
-Para cualquier duda o sugerencia no dude en ponerse en contacto con nosotros. Nuestro equipo le responderá con la mayor brevedad posible.
+				Para cualquier duda o sugerencia no dude en ponerse en contacto con nosotros. Nuestro equipo le responderá con la mayor brevedad posible.
 
-</p>
+				</p>
+			</div>
+		</div>
+		<div class="row">                
+			<div class="span6 offset3">
+				<h2>Formulario</h2>
+    				<%= form_for(@consulta) do |f| %>
 
-<h2>Formulario</h2>
+      					<%= f.label :name %>
+      					<%= f.text_field :name %>
 
-<FORM method=post action="cgi-bin/script.pl">
-Registro de un usuario
-<TABLE BORDER=0>
-<TR>
-	<TD>Apellido</TD>
-	<TD>
-	<INPUT type=text name="apellido">
-	</TD>
-</TR>
+      					<%= f.label :email %>
+      					<%= f.text_field :email %>
 
-<TR>
-	<TD>Nombre</TD>
-	<TD>
-	<INPUT type=text name="nombre">
-	</TD>
-</TR>
-
-<TR>
-	<TD>¿Por qué se pone en contacto con nosotros?</TD>
-	<TD>
-	<SELECT name="ocupación">
-		<OPTION VALUE="profesor">Incidencia</OPTION>
-		<OPTION VALUE="estudiante">Consultas</OPTION>
-		<OPTION VALUE="ingeniero">Sugerencias</OPTION>
-		<OPTION VALUE="otro">Otro</OPTION>
-	</SELECT>
-	</TD>
-</TR>
-<TR>
-	<TD>Mensaje</TD>
-	<TD>
-	<TEXTAREA rows="3" name="comentarios">
-	Escriba aquí su mensaje</TEXTAREA>
-	</TD>
-</TR>
-
-<TR>
-	<TD COLSPAN=2>
-	<INPUT type="submit" value="Enviar">
-	</TD>
-</TR>
-</TABLE>
-</FORM>
-
+					<%= f.label :mensaje %>
+					<%= f.text_field :mensaje %>
+      			
+					<%= f.submit "ENVIAR CONSULTA", class: "btn btn-large btn-primary" %>
+    				<% end %>
+			</div>
+		</div>				
+				
+</div>  <!--container-->
 
