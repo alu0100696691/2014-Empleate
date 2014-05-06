@@ -17,18 +17,18 @@
 		<div class="row">                
 			<div class="span6 offset3">
 				<h2>Formulario</h2>
-    				<%= form_for(@consulta) do |f| %>
+				<%= form_tag({:controller => "static_pages", :action => "create"}, :method => "post") do %>
+      					<%=  label_tag "name", "Nombre" %>
+					<%= text_field_tag "nombre", "", :required => "required" %>	
+					
+					<%=  label_tag "email", "Email" %>
+                                        <%= text_field_tag "email", "", :required => "required" %>
 
-      					<%= f.label :name %>
-      					<%= f.text_field :name %>
+					<%=  label_tag "mensaje", "Mensaje" %>
+                                        <%= text_area_tag "mensaje", "", :required => "required" %>
 
-      					<%= f.label :email %>
-      					<%= f.text_field :email %>
-
-					<%= f.label :mensaje %>
-					<%= f.text_field :mensaje %>
-      			
-					<%= f.submit "ENVIAR CONSULTA", class: "btn btn-large btn-primary" %>
+	      			
+					<%= submit_tag "ENVIAR CONSULTA", class: "btn btn-large btn-primary" %>
     				<% end %>
 			</div>
 		</div>				

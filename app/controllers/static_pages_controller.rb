@@ -1,26 +1,25 @@
 class StaticPagesController < ApplicationController
   def home
   end
-
-  def login
-  end
-
+  
   def about
   end
 
   def contact
-	@contacto = Contacto.new(user_params)
-	if @contacto.save
-      		redirect_to home
-    	else
-      		render 'contacto'
-    	end
+	@contacto = Contacto.new
   end
 
-	private
+  def create
+	@contacto = Contacto.new(params[:contacto])
+        if @contacto.save
+                flash[:success] = "Se ha enviado su mensaje correctamente."
+		redirect_to root_path
+        else
+                flash[:success] = "Error. No se ha podido enviar su mensaje."
+                #render 'new'
+        end
 
-    	def user_params
-      		params.require(:contacto).permit(:name, :email, :mensaje)
-    	end
+  end  
+
 end
 
