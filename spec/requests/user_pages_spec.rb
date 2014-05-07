@@ -55,13 +55,13 @@ describe "User pages" do
     		before { visit edit_user_path(user) }
 
     	describe "page" do
-     		 it { should have_content("Update your profile") }
+     		 it { should have_content("Actualizar tu cuenta") }
      		 it { should have_title("Edit user") }
      		 it { should have_link('change', href: 'http://gravatar.com/emails') }
     	end
 
    	 describe "with invalid information" do
-     		 before { click_button "Save changes" }
+     		 before { click_button "Guardar cambios" }
 
      		 it { should have_content('error') }
     	end
