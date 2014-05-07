@@ -2,6 +2,7 @@ require 'flog'
 require 'flay'
 require 'roodi'
 require 'roodi_task'
+#require 'metric_fu'
 
 #RoodiTask.new 'roodi', ['app/**/*.rb', 'lib/**/*.rb'], 'roodi.yml'
  
