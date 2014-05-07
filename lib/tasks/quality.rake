@@ -3,7 +3,12 @@ require 'flay'
 require 'roodi'
 require 'roodi_task'
 
-RoodiTask.new 'roodi', ['app/**/*.rb', 'lib/**/*.rb'], 'roodi.yml'
+#RoodiTask.new 'roodi', ['app/**/*.rb', 'lib/**/*.rb'], 'roodi.yml'
+ 
+RoodiTask.new do | t |
+t.patterns = %w(lib/**/*.rb spec/**/*.rb features/**/*.rb app/**/*.rb)
+end
+
 
 desc "Analyze for code complexity"
 
