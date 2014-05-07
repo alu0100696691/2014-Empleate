@@ -1,5 +1,9 @@
 require 'flog'
 require 'flay'
+require 'roodi'
+require 'roodi_task'
+
+RoodiTask.new 'roodi', ['app/**/*.rb', 'lib/**/*.rb'], 'roodi.yml'
 
 desc "Analyze for code complexity"
 
@@ -30,3 +34,4 @@ task :flay do
 
 	raise "#{flay.masses.size} chunks of code have a duplicate mass > #{threshold}" unless flay.masses.empty?
 end	
+
