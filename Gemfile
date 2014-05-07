@@ -54,6 +54,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'reek', '1.3.7'
 gem 'flay', '2.4.0'
 gem 'flog', '4.2.0'
+gem 'roodi', '4.0.0'
 
 
 group :doc do

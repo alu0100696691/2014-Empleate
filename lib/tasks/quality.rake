@@ -1,10 +1,11 @@
 require 'flog'
+require 'flay'
 
 desc "Analyze for code complexity"
 
 task :flog do
-        flog = Flog.new
-        flog.flog_files ['app']
+        flog = Flog.new :methods => true
+        flog.flog ['app']
         threshold = 30
 
         bad_methods = flog.totals.select do |name, score|
@@ -17,7 +18,7 @@ task :flog do
         raise "#{bad_methods.size} methods have a flog complexity > #{threshold}" unless bad_methods.empty?
 end
 
-require 'flay'
+
 
 desc "Analyze for code duplication"
 task :flay do
