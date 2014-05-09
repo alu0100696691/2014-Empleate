@@ -68,7 +68,8 @@ describe "Authentication" do
 
     		describe "for non-signed-in users" do
       			let(:user) { FactoryGirl.create(:user) }
-
+#
+#
       		describe "in the Users controller" do
 
         	describe "visiting the edit page" do
