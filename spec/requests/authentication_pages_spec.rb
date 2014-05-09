@@ -30,7 +30,16 @@ describe "Authentication" do
 
 	describe "with valid information" do
 		let(:user) { FactoryGirl.create(:user) }	
+#*******************************************************		
+		before { visit signin_path } #sign_in user }
 
+      		#it { should have_title(user.name) }
+      		it { should have_link('Users',       href: users_path) }
+      		it { should have_link('Profile',     href: user_path(user)) }
+      		it { should have_link('Settings',    href: edit_user_path(user)) }
+      		it { should have_link('Sign out',    href: signout_path) }
+      		it { should_not have_link('Sign in', href: signin_path) }		
+#************************************************************************
 		before do 
 		  visit signin_path
       		  fill_in "Email",    with: user.email.upcase     
@@ -76,6 +85,11 @@ describe "Authentication" do
           		before { visit edit_user_path(user) }
           		it { should have_title('Sign in') }
         	end
+                
+                describe "visiting the user index" do
+          		before { visit users_path }
+          		it { should have_title('All users') }
+        	end                
 
       		end
     		end
