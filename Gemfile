@@ -6,6 +6,7 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.2'
 
+
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
@@ -54,7 +55,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'reek', '1.3.7'
 gem 'flay', '2.4.0'
 gem 'flog', '4.2.0'
-gem 'roodi', '4.0.0'
+gem 'roodi', '3.1'
 
 
 group :doc do
@@ -62,7 +63,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
+
+#Metrica
+gem 'metric_fu', '4.11.0'
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
