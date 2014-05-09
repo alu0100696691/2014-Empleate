@@ -30,7 +30,6 @@ describe "Authentication" do
 
 	describe "with valid information" do
 		let(:user) { FactoryGirl.create(:user) }	
-#*******************************************************		
 		before { visit signin_path } #sign_in user }
 
       		#it { should have_title(user.name) }
@@ -39,7 +38,7 @@ describe "Authentication" do
       		it { should have_link('Settings',    href: edit_user_path(user)) }
       		it { should have_link('Sign out',    href: signout_path) }
       		it { should_not have_link('Sign in', href: signin_path) }		
-#************************************************************************
+		
 		before do 
 		  visit signin_path
       		  fill_in "Email",    with: user.email.upcase     
@@ -103,7 +102,6 @@ describe "Authentication" do
       			describe "submitting a GET request to the Users#edit action" do
         			before { get edit_user_path(wrong_user) }
         			specify { expect(response.body).not_to match(full_title('Edit user')) }
-        			#specify { expect(response).to redirect_to(root_url) }
       			end
 
     	end
