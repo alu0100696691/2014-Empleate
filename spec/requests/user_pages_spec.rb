@@ -45,7 +45,7 @@ describe "User pages" do
           			visit users_path
         		end
 
-        		it { should_not have_link('delete', href: user_path(admin)) }
+        		it { should have_link('delete', href: user_path(User.first)) }
       		end
     	end
 
