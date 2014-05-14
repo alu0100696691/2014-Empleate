@@ -20,6 +20,11 @@ describe User do
 
   it { should be_valid }
   it { should_not be_admin }
+  
+  #------------   10.6
+  it { should respond_to(:admin) }   
+  it { should respond_to(:microposts) }
+  #------------   10.6
 
   describe "with admin attribute set to 'true'" do
     before do
