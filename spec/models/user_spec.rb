@@ -24,6 +24,7 @@ describe User do
   #------------   10.6
   it { should respond_to(:admin) }   
   it { should respond_to(:microposts) }
+  it { should respond_to(:feed) }
   #------------   10.6
 
   describe "with admin attribute set to 'true'" do
@@ -125,7 +126,20 @@ describe User do
       			microposts.each do |micropost|
         		expect(Micropost.where(id: micropost.id)).to be_empty
       			end
+ #--------10.35
+
     		end
+	describe "status" do
+     		 let(:unfollowed_post) do
+       		   FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
+      		 end
+
+  	   	 its(:feed) { should include(newer_micropost) }
+     		 its(:feed) { should include(older_micropost) }
+     		 its(:feed) { should_not include(unfollowed_post) }
+    	end
+
+ #-------10.35
 	end
 #-------- 10.10
 end
