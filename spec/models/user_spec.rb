@@ -25,6 +25,7 @@ describe User do
   it { should respond_to(:admin) }   
   it { should respond_to(:microposts) }
   it { should respond_to(:feed) }
+  it { should respond_to(:relationships) } #----------11.3
   #------------   10.6
 
   describe "with admin attribute set to 'true'" do
