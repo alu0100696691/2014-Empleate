@@ -28,8 +28,10 @@ describe User do
   it { should respond_to(:relationships) } #----------11.3
 #------------   10.6
   it { should respond_to(:followed_users) }   #-----------11.9	
-  it { should respond_to(:following?) }   #-------11.11
-  it { should respond_to(:follow!) }    #-----11.11
+#  it { should respond_to(:following?) }   #-------11.11
+#  it { should respond_to(:follow!) }    #-----11.11
+  it { should respond_to(:reverse_relationships) }
+  it { should respond_to(:followers) }
 
   describe "with admin attribute set to 'true'" do
     before do
@@ -156,6 +158,13 @@ describe User do
 
     	it { should be_following(other_user) }
     	its(:followed_users) { should include(other_user) }
+#------------------------11.15........................
+	describe "followed user" do
+      		subject { other_user }
+      	its(:followers) { should include(@user) }
+    	end
+#------------------------11.15......................
+
 #-------11.13-------------  	
 	describe "and unfollowing" do
       		before { @user.unfollow!(other_user) }
