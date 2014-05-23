@@ -1,6 +1,7 @@
 Empleate::Application.routes.draw do
 	resources :users
 	resources :sessions, only: [:new, :create, :destroy]
+	resources :microposts, only: [:create, :destroy]
 	resources :contacto
 	root  'static_pages#home'  #pagina principal del proyecto  
   	match '/registro',  to: 'users#new',          via: 'get'

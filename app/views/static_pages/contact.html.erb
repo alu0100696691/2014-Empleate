@@ -3,9 +3,9 @@
       			<div class="header col-xs-12 col-sm-12 col-md-12 "> 	
 				<h1>Contacto</h1>
 
-				<center><%= image_tag "empleate.png", :alt => "logo empleate", :title => "empleate"%></center>
+				<center><%= image_tag "empleate.png", :alt => "logo empleate", :title => "empleate", :class => "img-circle"%></center>
 
-				<h2>Póngase en contacto con nosotros</h2>
+			      <br/><center><strong class="lead"><p class="text-info">Póngase en contacto con nosotros</p></strong></center>
 
 				<p>
 
@@ -16,7 +16,7 @@
 		</div>
 		<div class="row">                
 			<div class="span6 offset3">
-				<h2>Formulario</h2>
+				<strong class="lead"><p class="text-info">Formulario</p></strong>
 				<%= form_tag({:controller => "static_pages", :action => "create"}, :method => "post") do %>
       					<%=  label_tag "name", "Nombre" %>
 					<%= text_field_tag "nombre", "", :required => "required" %>	
