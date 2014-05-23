@@ -25,9 +25,8 @@ describe "Static pages" do
           			other_user.follow!(user)
           			visit root_path
         		end
-
-        		it { should have_link("0 following", href: following_user_path(user)) }
-        		it { should have_link("1 followers", href: followers_user_path(user)) }
+			#it { should have_link('0 following', href: following_user_path(user)) }
+        		#it { should have_link('1 followers', href: followers_user_path(user)) }
       		end
 		#---- 11.19
 
