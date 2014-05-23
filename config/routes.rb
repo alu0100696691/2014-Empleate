@@ -6,6 +6,7 @@ Empleate::Application.routes.draw do
 	end
 	resources :sessions, only: [:new, :create, :destroy]
 	resources :microposts, only: [:create, :destroy]
+  	resources :relationships, only: [:create, :destroy] #11.24
 	resources :contacto
 	root  'static_pages#home'  #pagina principal del proyecto  
   	match '/registro',  to: 'users#new',          via: 'get'
