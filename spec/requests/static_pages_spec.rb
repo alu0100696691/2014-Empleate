@@ -42,10 +42,8 @@ describe "Static pages" do
 
 	describe "Registro" do
 
-    		it "should have the content 'REGISTRO'" do
-      		visit '/users/new'
-      		expect(page).to have_content('REGISTRO')
-    		end
+      		before { visit '/users/new' }
+    		it { expect(page).to have_title('REGISTRO') }
   	end
 
 	describe "Acerca de" do

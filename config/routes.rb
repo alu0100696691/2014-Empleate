@@ -9,7 +9,7 @@ Empleate::Application.routes.draw do
   	resources :relationships, only: [:create, :destroy] #11.24
 	resources :contacto
 	root  'static_pages#home'  #pagina principal del proyecto  
-  	match '/registro',  to: 'users#new',          via: 'get'
+	match '/registro',  to: 'users#new',          via: 'get'
 	match '/signin',  to: 'sessions#new',         via: 'get'
 	match '/signout', to: 'sessions#destroy',     via: 'delete'
 	get "static_pages/login"

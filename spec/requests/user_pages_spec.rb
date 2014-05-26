@@ -62,7 +62,7 @@ describe "User pages" do
     	before { visit user_path(user) }
 
     		it { should have_content(user.name) }
-    		#it { should have_title(user.name) }
+    		it { should have_title(user.name) }
 #-----------------------10.16
 	describe "microposts" do
       		it { should have_content(m1.content) }
@@ -102,7 +102,7 @@ describe "User pages" do
         	let(:user) { User.find_by(email: 'user@example.com') }
 
         	it { should have_link('Sign out') }
-        	#it { should have_title(user.name) }
+        	it { should have_title(user.name) }
         	it { should have_selector('div.alert.alert-success', text: 'Bienvenido') }
       	end
 	
@@ -114,8 +114,7 @@ describe "User pages" do
 	describe "edit" do
     		let(:user) { FactoryGirl.create(:user) }
     		before do
-      			#sign_in user
-			visit signin_path
+      			sign_in user
       			visit edit_user_path(user)
     		end
 
@@ -140,7 +139,7 @@ describe "User pages" do
         		click_button "Guardar cambios"
       		end
 
-      		#it { should have_title(new_name) }
+      		it { should have_title(new_name) }
       		it { should have_selector('div.alert.alert-success') }
       		specify { expect(user.reload.name).to  eq new_name }
       		specify { expect(user.reload.email).to eq new_email }	
