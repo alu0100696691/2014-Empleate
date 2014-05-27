@@ -119,12 +119,12 @@ describe "Authentication" do
 			
 			describe "visiting the following page" do
          			 before { visit following_user_path(user) }
-         			 it { should have_title('Sign in') }
+         			 it { should have_title('Following') }   
         		end
 
         		describe "visiting the followers page" do
          			 before { visit followers_user_path(user) }
-         			 it { should have_title('Sign in') }
+         			 it { should have_title('Followers') }   
        			 end
       		end
 
@@ -136,7 +136,7 @@ describe "Authentication" do
 
       			describe "submitting a DELETE request to the Users#destroy action" do
         			before { delete user_path(user) }
-        			#specify { expect(response).to redirect_to(root_url) }
+        			#specify { expect(response).to redirect_to(root_url) }    
       			end
     		end
 
