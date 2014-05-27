@@ -11,6 +11,9 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def ayuda
+  end
+
   def contact
 	@contacto = Contacto.new
   end
