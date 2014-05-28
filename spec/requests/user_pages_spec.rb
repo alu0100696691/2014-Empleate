@@ -1,3 +1,4 @@
+# = TEST PARA VERIFICAR CORRECTO FUNCIONAMIENTO HERRAMIENTAS USUARIOS
 require 'spec_helper'
 
 describe "User pages" do
@@ -13,7 +14,7 @@ describe "User pages" do
 		visit users_path
 	end
 
-		
+	#mostrar todos los usuarios	
     	it { should have_title('All users') }
     	it { should have_content('All users') }
 
@@ -33,7 +34,7 @@ describe "User pages" do
         		end
       		end
     	end
-
+	#poder borrar usuarios si eres o no administrador
     	describe "delete links" do
 
       		it { should_not have_link('delete') }
@@ -73,7 +74,7 @@ describe "User pages" do
 
 
 #-----------------------------------------------------------11.32-----------------------------------------------------------
-
+		#probar boton follow/unfollow
 		describe "follow/unfollow buttons" do
       			let(:other_user) { FactoryGirl.create(:user) }
       			before { sign_in user }
@@ -127,7 +128,7 @@ describe "User pages" do
 
 #---------------------------------------------------------------------------------------------------------------------------
 	end
-	
+	#Pruebas de Registro de usuarios
 	describe "Registro" do
 
 	before { visit registro_path } 
@@ -164,7 +165,7 @@ describe "User pages" do
   	
 	end
 
-	
+	#Pruebas para comprobar edicion de cuenta de usuario
 	describe "edit" do
     		let(:user) { FactoryGirl.create(:user) }
     		before do

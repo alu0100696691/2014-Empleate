@@ -1,3 +1,4 @@
+# = TEST AUTENTIFICACION DE USUARIOS
 require 'spec_helper'
 
 describe "Authentication" do

@@ -1,3 +1,4 @@
+# = TEST PAGINAS ESTATICAS PROYECTO: home page
 require 'spec_helper'
 
 describe "Static pages" do	

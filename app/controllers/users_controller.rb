@@ -1,9 +1,10 @@
+# = CONTROLADOR USUARIOS
 class UsersController < ApplicationController
 	#before_action :signed_in_user, only: [:index, :edit, :update, :destroy]
   	#before_action :correct_user,   only: [:edit, :update]
   	#before_action :admin_user,     only: :destroy
 
-
+	#Metodo mostrar usuario
 	def show
   		@user = User.find(params[:id])
   		@title = @user.name
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
 		@user = User.new
   	end
 
+	#Metodo registrar usuario
 	def create
     		@user = User.new(user_params)
     		if @user.save

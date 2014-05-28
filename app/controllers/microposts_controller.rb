@@ -1,7 +1,9 @@
+# = CONTROLADOR DE MICROPOST
 class MicropostsController < ApplicationController
   before_action :signed_in_user
   before_action :correct_user,   only: :destroy
   
+  #Metodo crear micropost
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
@@ -13,7 +15,7 @@ class MicropostsController < ApplicationController
     end
   end
 
-
+  #Metodo borrar micropost
   def destroy
 #----- 10.46
    @micropost.destroy

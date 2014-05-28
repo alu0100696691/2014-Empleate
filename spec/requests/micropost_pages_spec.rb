@@ -1,3 +1,4 @@
+# = TEST PARA VERIFICAR FUNCIONALIDAD DE MICROPOST
 require 'spec_helper'
 
 describe "Micropost pages" do
@@ -6,7 +7,8 @@ describe "Micropost pages" do
 
   let(:user) { FactoryGirl.create(:user) }
   before { sign_in user }
-
+  
+  #Pruebas para comprobar si funciona el crear micropost
   describe "micropost creation" do
     before { visit root_path }
 
@@ -33,6 +35,7 @@ describe "Micropost pages" do
 
 #-----10.45
 
+  #Pruebas para comprobar el borrado de micropost	
   describe "micropost destruction" do
     before { FactoryGirl.create(:micropost, user: user) }
 

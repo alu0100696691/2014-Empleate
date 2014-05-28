@@ -1,3 +1,4 @@
+# = CONTROLADOR PAGINAS ESTATICAS DEL PROYECTO: HOME,ABOUT,HELP,CONTACT
 class StaticPagesController < ApplicationController
  	
  #------10.38
@@ -18,6 +19,7 @@ class StaticPagesController < ApplicationController
 	@contacto = Contacto.new
   end
 
+  #Metodo para salvar mensaje de contacto
   def create
 	@contacto = Contacto.new(params[:contacto])
         if @contacto.save

@@ -1,3 +1,4 @@
+# = TAREAS PARA CREAR AUTOMATICAMENTE USUARIOS, MICROPOST, RELACIONES.
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
