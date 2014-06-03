@@ -17,10 +17,8 @@ class MicropostsController < ApplicationController
 
   #Metodo borrar micropost
   def destroy
-#----- 10.46
    @micropost.destroy
    	redirect_to root_url
-#----- 10.46 
   end
 
   private
@@ -28,10 +26,8 @@ class MicropostsController < ApplicationController
     def micropost_params
       params.require(:micropost).permit(:content)
     end
-#---- 10.46
     def correct_user
       @micropost = current_user.microposts.find_by(id: params[:id])
       redirect_to root_url if @micropost.nil?
     end
-#-----10.46
 end

@@ -27,7 +27,6 @@ class StaticPagesController < ApplicationController
 		redirect_to root_path
         else
                 flash[:success] = "Error. No se ha podido enviar su mensaje."
-                #render 'new'
         end
 
   end  
