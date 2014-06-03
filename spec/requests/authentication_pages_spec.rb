@@ -73,7 +73,6 @@ describe "Authentication" do
 
     		describe "for non-signed-in users" do
       			let(:user) { FactoryGirl.create(:user) }
-#-------------------------------------11.33-----------------------------------------
 
 	describe "in the Relationships controller" do
         	describe "submitting to the create action" do
@@ -87,8 +86,6 @@ describe "Authentication" do
         end
       end
 
-#-----------------------------------------------------------------------------------
-#-------------------------------------10.23------------------------------------------ 
 
 	 describe "in the Microposts controller" do
 
@@ -104,7 +101,6 @@ describe "Authentication" do
      	 end
 
 
-#-----------------------------------10.23--------------------------------------------
 
       		describe "in the Users controller" do
 

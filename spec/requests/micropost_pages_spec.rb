@@ -33,7 +33,6 @@ describe "Micropost pages" do
     end
   end
 
-#-----10.45
 
   #Pruebas para comprobar el borrado de micropost	
   describe "micropost destruction" do
