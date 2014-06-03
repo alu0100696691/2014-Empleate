@@ -16,7 +16,7 @@ describe "User pages" do
 
 	#mostrar todos los usuarios	
     	it { should have_title('All users') }
-    	it { should have_content('All users') }
+    	it { should have_content('TODOS LOS USUARIOS') }
 
   	describe "pagination" do
 
