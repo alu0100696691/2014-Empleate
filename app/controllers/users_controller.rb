@@ -12,9 +12,14 @@ class UsersController < ApplicationController
   	end
 
 	def index
-    		#@users = User.all
-		@users = User.paginate(page: params[:page])
-  	end
+  		@buscar = params[:nombre];
+
+                if @buscar
+                        @users = User.where(name: @buscar).paginate(page: params[:page]) 
+                else
+                        @users = User.paginate(page: params[:page])
+                end
+	end
 
   	def new
 		@user = User.new

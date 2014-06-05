@@ -17,7 +17,7 @@ describe "User pages" do
 	#mostrar todos los usuarios	
     	it { should have_title('All users') }
     	it { should have_content('TODOS LOS USUARIOS') }
-
+	
   	describe "pagination" do
 
 		before do
@@ -156,7 +156,19 @@ describe "User pages" do
       	end
 	
 	end
-  	
+ 	
+	#Pruebas para busqueda de usuarios
+	describe "buscar" do
+		let(:user) { FactoryGirl.create(:user) }
+		before do
+			sign_in user
+                	visit users_path
+			fill_in :nombre, with: "Example User"
+			click_button "Enviar"
+                end
+	end
+
+ 	
 	end
 
 	#Pruebas para comprobar edicion de cuenta de usuario

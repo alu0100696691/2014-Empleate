@@ -2,6 +2,12 @@
 <h1>TODOS LOS USUARIOS</h1>
 
 <%= will_paginate %>
+<%= form_tag({:controller => "users", :action => "index"}, :method => "get") do %>
+   <%= label_tag "nombre", "Nombre a buscar" %>
+   <%= text_field_tag "nombre", "", :size => 10, :maxlenght => 10, :placeholder => "Nombre", :required => "required" %>
+   <br />
+   <%= submit_tag "Enviar" %>
+<% end %>
 
 <ul class="users">
   	<% @users.each do |user| %>
