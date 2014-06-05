@@ -18,7 +18,6 @@ describe Micropost do
     before { @micropost.user_id = nil }
     it { should_not be_valid }
   end
-#------- 10.14
   describe "with blank content" do
     before { @micropost.content = " " }
     it { should_not be_valid }
@@ -28,5 +27,4 @@ describe Micropost do
     before { @micropost.content = "a" * 141 }
     it { should_not be_valid }
   end
-#------- 10.14
 end

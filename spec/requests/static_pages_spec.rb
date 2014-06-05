@@ -1,3 +1,4 @@
+# = TEST PAGINAS ESTATICAS PROYECTO: home page
 require 'spec_helper'
 
 describe "Static pages" do	
@@ -17,6 +18,22 @@ describe "Static pages" do
           		  expect(page).to have_selector("li##{item.id}", text: item.content)
         		end
       		end
+
+      		describe "follower/following counts" do
+        		let(:other_user) { FactoryGirl.create(:user) }
+        		before do
+          			other_user.follow!(user)
+          			visit root_path
+        		end
+			it "following" do
+			expect(page).to have_content('0 following')
+			end
+			it "followers" do
+                         expect(page).to have_content('1 followers')
+                        end
+
+      		end
+
     	end
 	end
   	describe "Log in" do
@@ -29,10 +46,8 @@ describe "Static pages" do
 
 	describe "Registro" do
 
-    		it "should have the content 'REGISTRO'" do
-      		visit '/users/new'
-      		expect(page).to have_content('REGISTRO')
-    		end
+      		before { visit '/users/new' }
+    		it { expect(page).to have_title('REGISTRO') }
   	end
 
 	describe "Acerca de" do

@@ -1,3 +1,4 @@
+# = CONTROLADOR PAGINAS ESTATICAS DEL PROYECTO: HOME,ABOUT,HELP,CONTACT
 class StaticPagesController < ApplicationController
  	
  #------10.38
@@ -11,10 +12,14 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def ayuda
+  end
+
   def contact
 	@contacto = Contacto.new
   end
 
+  #Metodo para salvar mensaje de contacto
   def create
 	@contacto = Contacto.new(params[:contacto])
         if @contacto.save
@@ -22,7 +27,6 @@ class StaticPagesController < ApplicationController
 		redirect_to root_path
         else
                 flash[:success] = "Error. No se ha podido enviar su mensaje."
-                #render 'new'
         end
 
   end  
